@@ -64,7 +64,7 @@ while True:
                 url = "https://watchdog.free.beeceptor.com/detect"
                 data = {'id': id_disp, 'name': id_disp}
                 n = requests.post(url, data=data)
-                response = json.loads(n.text)
+                print(n.text)
 
         cv2.putText(
                     img, 
