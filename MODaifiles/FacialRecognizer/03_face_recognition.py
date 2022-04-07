@@ -1,4 +1,5 @@
 import cv2
+import sys
 import numpy as np
 import os 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
@@ -9,7 +10,10 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 #iniciate id counter
 id = 0
 # names related to ids: example ==> Marcelo: id=1,  etc
-names = ['None', 'Prash', 'Dwayne', 'Kevin', 'Ryan', 'S']
+# splits incoming list of args by ,
+temp= sys.argv[1].split(',')
+final = ["None"] + temp
+names = final
 # Initialize and start realtime video capture
 cam = cv2.VideoCapture(0)
 cam.set(3, 640) # set video widht
